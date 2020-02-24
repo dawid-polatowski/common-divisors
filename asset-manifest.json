@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/common-divisors/static/css/main.93c473a6.chunk.css",
+    "main.js": "/common-divisors/static/js/main.00157fdd.chunk.js",
+    "runtime-main.js": "/common-divisors/static/js/runtime-main.8862b6e0.js",
+    "static/js/2.36b45d5d.chunk.js": "/common-divisors/static/js/2.36b45d5d.chunk.js",
+    "index.html": "/common-divisors/index.html",
+    "precache-manifest.6c618aca2f229de08fd5a4dadb95d775.js": "/common-divisors/precache-manifest.6c618aca2f229de08fd5a4dadb95d775.js",
+    "service-worker.js": "/common-divisors/service-worker.js",
+    "static/js/2.36b45d5d.chunk.js.LICENSE.txt": "/common-divisors/static/js/2.36b45d5d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8862b6e0.js",
+    "static/js/2.36b45d5d.chunk.js",
+    "static/css/main.93c473a6.chunk.css",
+    "static/js/main.00157fdd.chunk.js"
+  ]
+}
