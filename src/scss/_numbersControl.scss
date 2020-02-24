@@ -1,0 +1,128 @@
+@mixin controlButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 1.4rem;
+  height: 1.4rem;
+  border: 0 solid white;
+  border-radius: 50%;
+  color: white;
+  padding: 0;
+  margin: 0;
+  transition: background-color 0.3s ease-in;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+#numbers-control {
+  display: flex;
+  flex-direction: column;
+}
+
+.number-control-item-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $primary-color;
+
+  p {
+    margin: 0;
+    color: white;
+  }
+}
+
+.number-control-item-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+
+  @media (max-width: $size-xl) {
+  }
+
+  input[name="number"] {
+    width: 50%;
+    margin: auto;
+    border: 3px solid $secondary-color;
+    border-radius: 5%;
+    height: 1.5rem;
+    color: $primary-color;
+    padding: 0 0.5rem;
+    font-weight: 600;
+    z-index: 1;
+    transition: border-color 0.2s ease-in;
+
+    @media (max-width: $size-xl) {
+      margin-bottom: 0.3rem;
+      width: 70%;
+    }
+
+    @media (max-width: $size-xs) {
+      width: 65%;
+    }
+
+    &:hover {
+      border-color: $primary-color;
+    }
+
+    &:focus {
+      outline: 0;
+      outline-offset: 0;
+      border-color: $primary-color;
+    }
+  }
+}
+
+#number-control-item-form-buttons {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.update-btn {
+  @include controlButton();
+  background-color: #20399e;
+  font-size: 0.7rem;
+  position: absolute;
+  left: 0.5rem;
+  top: 0.9rem;
+
+  @media (max-width: $size-xl) {
+    left: 2rem;
+    top: 0.5rem;
+  }
+
+  @media (max-width: $size-xs) {
+    left: 1rem;
+  }
+
+  &:hover {
+    background-color: lighten($color: #20399e, $amount: 20%);
+  }
+}
+
+.delete-btn {
+  @include controlButton();
+  background-color: #c40000;
+  font-size: 1.1rem;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.9rem;
+
+  @media (max-width: $size-xl) {
+    right: 2rem;
+    top: 0.5rem;
+  }
+
+  @media (max-width: $size-xs) {
+    right: 1rem;
+  }
+
+  &:hover {
+    background-color: lighten($color: #c40000, $amount: 20%);
+  }
+}

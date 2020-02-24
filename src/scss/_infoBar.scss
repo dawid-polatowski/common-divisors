@@ -1,0 +1,68 @@
+@mixin infoBarItem {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 15%;
+  margin-right: 0.5rem;
+
+  @media (max-width: $size-xs) {
+    width: 0.5rem;
+    height: 0.5rem;
+    min-width: 0.5rem;
+    min-height: 0.5rem;
+  }
+}
+
+#info-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  color: white;
+
+  @media (max-width: $size-xxl) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: $size-xl) {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+.info-bar-item {
+  margin: 0 0.5rem;
+  display: flex;
+
+  @media (max-width: $size-xs) {
+    margin-right: 0.2rem;
+  }
+
+  p {
+    margin: 0;
+
+    @media (max-width: $size-xs) {
+      font-size: 0.6rem;
+    }
+  }
+}
+
+#info-bar-item-0 {
+  background-color: $legend-0-color;
+  @include infoBarItem();
+}
+
+#info-bar-item-1 {
+  background-color: $legend-1-color;
+  @include infoBarItem();
+}
+
+#info-bar-item-2 {
+  background-color: $legend-2-color;
+  @include infoBarItem();
+}
+
+#info-bar-item-3 {
+  background-color: $legend-3-color;
+  @include infoBarItem();
+}

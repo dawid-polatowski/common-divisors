@@ -1,0 +1,30 @@
+@import 'headerBar';
+
+#main-header {
+  display: flex;
+  flex-direction: column;
+}
+
+#branding {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  width: 100%;
+  background-color: $primary-color;
+
+  p {
+    margin: 0;
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+
+    @media (max-width: $size-xs) {
+      font-size: 1.3rem;
+    }
+
+    span {
+      color: $tertiary-color;
+    }
+  }
+}

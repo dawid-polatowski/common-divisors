@@ -1,0 +1,64 @@
+@mixin numberItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: calc(100% - 0.6rem);
+  border-radius: 5px;
+  margin-right: 0.3rem;
+
+  &:first-child {
+    margin-left: 0.3rem;
+  }
+
+  p {
+    margin: 0;
+    padding: 0 1rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+}
+
+#numbers-show {
+  flex-grow: 1;
+  overflow-x: auto;
+}
+
+.number-show-item {
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+  width: fit-content;
+}
+
+.number-show-item-header {
+  background-color: $primary-color;
+  position: relative;
+  right: 0;
+  left: 0;
+}
+
+.number-show-item-content {
+  display: flex;
+  align-items: center;
+}
+
+.number-item-0 {
+  background-color: $legend-0-color;
+  @include numberItem();
+}
+
+.number-item-1 {
+  background-color: $legend-1-color;
+  @include numberItem();
+}
+
+.number-item-2 {
+  background-color: $legend-2-color;
+  @include numberItem();
+}
+
+.number-item-3 {
+  background-color: $legend-3-color;
+  @include numberItem();
+}

@@ -1,0 +1,57 @@
+@import 'config';
+@import 'header';
+@import 'numbersContainer';
+@import 'footer';
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;  
+  overflow-x: hidden;
+  height: 100%;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.vertical-line {
+  background-color: $primary-color;
+  height: 100%;
+  min-width: $vertical-line-width;
+}
+
+.left-side {
+  min-width: $left-bar-width;
+  max-width: $left-bar-width;
+
+  @media (max-width: $size-xl) {
+    min-width: $left-bar-width * 0.7;
+    max-width: $left-bar-width * 0.7;
+  }
+
+  @media (max-width: $size-xs) {
+    min-width: $left-bar-width * 0.5;
+    max-width: $left-bar-width * 0.5;
+  }
+}
+
+.item-top {
+  height: 1.5rem;
+}
+
+.item-bottom {
+  height: 3rem;
+
+  @media (max-width: $size-xl) {
+    min-height: 4.5rem;
+    max-height: 4.5rem;
+  }
+}

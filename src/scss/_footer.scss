@@ -1,0 +1,12 @@
+footer {
+  display: flex;
+  justify-content: center;
+  background-color: $primary-color;
+  text-align: center;
+  color: white;
+
+  p {
+    margin: 1.5rem 0;
+    padding: 0 2rem;
+  }
+}
