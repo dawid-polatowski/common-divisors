@@ -32,7 +32,7 @@ export default function NumberControlItem({ index, number }) {
         <p>#{index}</p>
       </div>
       <form className="number-control-item-form item-bottom">
-        <input type="number" name="number" value={numberValue} onChange={onChange} />
+        <input type="number" name="number" value={numberValue} onClick={(e) => e.target.select()} onChange={onChange} />
         <div id="number-control-item-form-buttons">
           {previousNumberValue !== numberValue ? <button title="Update Number" className='update-btn' onClick={onUpdate}>U</button> : null}
           <button title="Remove Number" className="delete-btn" onClick={onDelete}>-</button>

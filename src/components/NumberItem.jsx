@@ -4,7 +4,7 @@ export default function NumberItem(props) {
   return (
     <div className={`number-item-${props.type}`}>
       <p>
-        {props.number}
+        {props.number.toLocaleString()}
       </p>
     </div>
   )

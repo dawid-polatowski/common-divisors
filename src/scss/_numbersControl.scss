@@ -48,13 +48,14 @@
     width: 50%;
     margin: auto;
     border: 3px solid $secondary-color;
-    border-radius: 5%;
+    border-radius: 5px;
     height: 1.5rem;
-    color: $primary-color;
+    color: white;
     padding: 0 0.5rem;
     font-weight: 600;
     z-index: 1;
     transition: border-color 0.2s ease-in;
+    background-color: $primary-color;
 
     @media (max-width: $size-xl) {
       margin-bottom: 0.3rem;
@@ -66,13 +67,13 @@
     }
 
     &:hover {
-      border-color: $primary-color;
+      border-color: white;
     }
 
     &:focus {
       outline: 0;
       outline-offset: 0;
-      border-color: $primary-color;
+      border-color: white;
     }
   }
 }
@@ -85,7 +86,7 @@
 
 .update-btn {
   @include controlButton();
-  background-color: #20399e;
+  background-color: $update-btn-color;
   font-size: 0.7rem;
   position: absolute;
   left: 0.5rem;
@@ -101,13 +102,13 @@
   }
 
   &:hover {
-    background-color: lighten($color: #20399e, $amount: 20%);
+    background-color: lighten($color: $update-btn-color, $amount: 20%);
   }
 }
 
 .delete-btn {
   @include controlButton();
-  background-color: #c40000;
+  background-color: $delete-btn-color;
   font-size: 1.1rem;
   position: absolute;
   right: 0.5rem;
@@ -123,6 +124,6 @@
   }
 
   &:hover {
-    background-color: lighten($color: #c40000, $amount: 20%);
+    background-color: lighten($color: $delete-btn-color, $amount: 20%);
   }
 }
