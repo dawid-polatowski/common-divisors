@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/common-divisors/static/css/main.433617f2.chunk.css",
-    "main.js": "/common-divisors/static/js/main.70a127f5.chunk.js",
+    "main.js": "/common-divisors/static/js/main.00907987.chunk.js",
     "runtime-main.js": "/common-divisors/static/js/runtime-main.8862b6e0.js",
     "static/js/2.36b45d5d.chunk.js": "/common-divisors/static/js/2.36b45d5d.chunk.js",
     "index.html": "/common-divisors/index.html",
-    "precache-manifest.06d9a85ba60ba169f81c69dfaf15f83f.js": "/common-divisors/precache-manifest.06d9a85ba60ba169f81c69dfaf15f83f.js",
+    "precache-manifest.d853f25f26e16e194484e572a19bb6ed.js": "/common-divisors/precache-manifest.d853f25f26e16e194484e572a19bb6ed.js",
     "service-worker.js": "/common-divisors/service-worker.js",
     "static/js/2.36b45d5d.chunk.js.LICENSE.txt": "/common-divisors/static/js/2.36b45d5d.chunk.js.LICENSE.txt"
   },
@@ -13,6 +13,6 @@
     "static/js/runtime-main.8862b6e0.js",
     "static/js/2.36b45d5d.chunk.js",
     "static/css/main.433617f2.chunk.css",
-    "static/js/main.70a127f5.chunk.js"
+    "static/js/main.00907987.chunk.js"
   ]
 }
