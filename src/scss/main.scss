@@ -1,58 +1,31 @@
-@import 'config';
-@import 'header';
-@import 'numbersContainer';
-@import 'footer';
+@import "config";
+@import "header";
+@import "container";
+@import "footer";
 
-html, body {
+html {
+  min-height: 100vh;
+}
+
+html,
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  position: relative;  
-  overflow-x: hidden;
+  width: 100%;
   height: 100%;
+  position: absolute;
 }
 
 body {
-  font-family: 'Lato', sans-serif;
-  background-color: $background-color;
+  font-family: "Lato", sans-serif;
+  background: $background-color;
+  background-attachment: fixed;
 }
 
 #root {
   display: flex;
   flex-direction: column;
+  width: 100%;
   height: 100%;
-}
-
-.vertical-line {
-  background-color: $primary-color;
-  height: 100%;
-  min-width: $line-width;
-}
-
-.left-side {
-  min-width: $left-bar-width;
-  max-width: $left-bar-width;
-
-  @media (max-width: $size-xl) {
-    min-width: $left-bar-width * 0.7;
-    max-width: $left-bar-width * 0.7;
-  }
-
-  @media (max-width: $size-xs) {
-    min-width: $left-bar-width * 0.5;
-    max-width: $left-bar-width * 0.5;
-  }
-}
-
-.item-top {
-  height: 1.5rem;
-}
-
-.item-bottom {
-  height: 3rem;
-
-  @media (max-width: $size-xl) {
-    min-height: 4.5rem;
-    max-height: 4.5rem;
-  }
 }

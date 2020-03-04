@@ -1,0 +1,28 @@
+@import "controlPanel";
+@import "managePanel";
+@import "displayPanel";
+
+#main-panel {
+  display: flex;
+  flex: 1;
+  margin: 1rem;
+  overflow-y: hidden;
+  min-height: 450px;
+
+  @media (max-width: $size-x) {
+    flex-direction: column;
+  }
+}
+
+#side-panel {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+
+  @media (max-width: $size-x) {
+    margin-left: 0;
+  }
+}

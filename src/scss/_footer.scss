@@ -1,9 +1,11 @@
 footer {
   display: flex;
   justify-content: center;
-  background-color: $primary-color;
+  background-color: $panel-color;
+  border-radius: $panel-border-radius;
   text-align: center;
   color: white;
+  margin: 0 1rem 1rem 1rem;
 
   p {
     margin: 1.5rem 0;

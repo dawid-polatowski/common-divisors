@@ -1,8 +1,7 @@
-@import 'headerBar';
-
 #main-header {
   display: flex;
   flex-direction: column;
+  margin: 0 1rem;
 }
 
 #branding {
@@ -11,7 +10,7 @@
   align-items: center;
   height: 4rem;
   width: 100%;
-  background-color: $primary-color;
+  text-align: center;
 
   p {
     margin: 0;
@@ -24,13 +23,96 @@
     }
 
     span {
-      color: $tertiary-color;
+      color: black;
     }
   }
 }
 
-#header-horizontal-line {
-  background-color: $primary-color;
-  width: 100%;
-  height: $line-width;
+#legend-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $panel-color;
+  margin: 0 auto;
+  border-radius: $panel-border-radius;
+  color: white;
+
+  @media (max-width: $size-x) {
+    display: grid;
+    justify-items: flex-start;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: $size-s) and (max-width: $size-m) {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0;
+  }
+
+  @media (max-width: $size-s) {
+    grid-template-columns: 1fr;
+  }
+
+  @media (max-width: $size-xs) {
+    margin: 0;
+  }
+
+  .legend-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+
+    @media (max-width: $size-s) {
+      margin: 0.5rem;
+    }
+
+    p {
+      margin: 0;
+
+      @media (min-width: $size-xs) and (max-width: $size-m) {
+        font-size: 0.9rem;
+      }
+
+      @media (min-width: $size-xxs) and (max-width: $size-xs) {
+        font-size: 0.7rem;
+      }
+
+      @media (max-width: $size-xxs) {
+        font-size: 0.6rem;
+      }
+    }
+  }
+}
+
+@mixin legendItem {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 15%;
+  margin-right: 0.5rem;
+
+  @media (max-width: $size-xs) {
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-right: 0.2rem;
+  }
+}
+
+#legend-item-0 {
+  background-color: $legend-0-color;
+  @include legendItem();
+}
+
+#legend-item-1 {
+  background-color: $legend-1-color;
+  @include legendItem();
+}
+
+#legend-item-2 {
+  background-color: $legend-2-color;
+  @include legendItem();
+}
+
+#legend-item-3 {
+  background-color: $legend-3-color;
+  @include legendItem();
 }

@@ -1,17 +1,148 @@
-$primary-color: #536edd;
-$secondary-color: #abbbee;
-$tertiary-color: #20399e;
-$background-color: #20399e;
-$update-btn-color: #c78100;
-$delete-btn-color: #c40000;
+// Media Size
+$size-xxl: 1200px;
+$size-xl: 992px;
+$size-x: 768px;
+$size-m: 600px;
+$size-s: 480px;
+$size-xs: 320px;
+$size-xxs: 200px;
+
+// Colors
+$primary-color: #222222;
+$secondary-color: #777777;
+$tertiary-color: #000000;
+
+$background-color: linear-gradient(135deg, #f5576c, #c608dc);
+$panel-color: rgba($color: #000000, $alpha: 0.3);
+$panel-border-radius: 8px;
+
+$add-btn-color: linear-gradient(135deg, #14c400, #0b6a00);
+$add-btn-hover-color: linear-gradient(
+  135deg,
+  lighten(
+    $color: #14c400,
+    $amount: 5%
+  ),
+  lighten(
+    $color: #0b6a00,
+    $amount: 5%
+  )
+);
+$update-btn-color: linear-gradient(135deg, #0d00c4, #07006a);
+$update-btn-hover-color: linear-gradient(
+  135deg,
+  lighten(
+    $color: #0d00c4,
+    $amount: 5%
+  ),
+  lighten(
+    $color: #07006a,
+    $amount: 5%
+  )
+);
+$delete-btn-color: linear-gradient(135deg, #ff0000, #990000);
+$delete-btn-hover-color: linear-gradient(
+  135deg,
+  lighten(
+    $color: #ff0000,
+    $amount: 5%
+  ),
+  lighten(
+    $color: #990000,
+    $amount: 5%
+  )
+);
+
 $legend-0-color: #d4d4d4;
 $legend-1-color: #13ff4b;
 $legend-2-color: #fffb13;
 $legend-3-color: #ff1313;
 
-$size-xxl: 1100px;
-$size-xl: 790px;
-$size-xs: 370px;
+// Classes
 
-$left-bar-width: 12rem;
-$line-width: 0.5rem;
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 0 solid white;
+  border-radius: 7px;
+  color: white;
+  padding: 0;
+  margin: 0;
+  transition: background-image 0.3s ease-in;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+// Animations
+
+// Fade
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: 300ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: 300ms;
+}
+
+// Fade Zoom
+
+.fade-zoom-enter {
+  transform: scale(0);
+  opacity: 0;
+}
+
+.fade-zoom-enter-active {
+  transform: scale(1);
+  opacity: 1;
+  transition: 300ms;
+}
+
+.fade-zoom-exit {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.fade-zoom-exit-active {
+  transform: scale(0);
+  opacity: 0;
+  transition: 300ms;
+}
+
+// Slide Up
+
+.slide-up-enter {
+  opacity: 0;
+  transform: translateY(15rem);
+}
+
+.slide-up-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 300ms;
+}
+
+.slide-up-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-up-exit-active {
+  opacity: 0;
+  transform: translateY(15rem);
+  transition: 300ms;
+}
