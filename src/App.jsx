@@ -16,6 +16,7 @@ function App() {
   };
 
   useEffect(() =>{
+    // eslint-disable-next-line
     managePanel = document.getElementById('manage-panel');
 
     let displayPanel = document.getElementById('display-panel');   

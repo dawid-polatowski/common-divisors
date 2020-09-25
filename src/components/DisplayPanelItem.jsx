@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '../context/GlobalState';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import DisplayPanelNumber from './DisplayPanelNumber';
 
 export default function DisplayPanelItem({ number }) {
@@ -27,9 +26,9 @@ export default function DisplayPanelItem({ number }) {
 
   return (
     <div className="display-panel-item">
-      <TransitionGroup className="display-panel-numbers">
-        {divisors.numbers.map(divisor => (<CSSTransition key={divisor.value.toString()} timeout={300} classNames="fade-zoom"><DisplayPanelNumber number={divisor.value} type={getLegendType(divisors.greatest, divisor.common, getId(divisor), divisor.value)}></DisplayPanelNumber></CSSTransition>))}
-      </TransitionGroup>
+      <div className="display-panel-numbers animate__animated animate__fadeIn">
+        {divisors.numbers.map(divisor => (<DisplayPanelNumber key={divisor.value.toString()} number={divisor.value} type={getLegendType(divisors.greatest, divisor.common, getId(divisor), divisor.value)}></DisplayPanelNumber>))}
+      </div>
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import ControlPanel from './ControlPanel';
 import ManagePamel from './ManagePanel';
 import DisplayPanel from './DisplayPanel';
