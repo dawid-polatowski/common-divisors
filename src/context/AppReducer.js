@@ -1,54 +1,76 @@
-const getCommonDivisors = (nums) => {
-  let numbers = [];
-  let allDivisors = [];
+import { v4 as uuid } from 'uuid'
 
-  for (let i = 0; i < nums.length; i++) {
-    for (let j = 1; j <= nums[i].value; j++) {
-      if (nums[i].value % j === 0) {
-        if (allDivisors.indexOf(j) < 0) allDivisors.push(j);
+const getDivisors = numbers => {
+  let divisors = []
+  let divisorsCounter = []
+
+  // Find all divisors
+
+  for (let i = 0; i < numbers.length; i++) {
+    for (let j = 1; j <= numbers[i].value; j++) {
+      if (numbers[i].value % j === 0) {
+        divisorsCounter.push(j)
+
+        if (divisors.filter(divisor => divisor.value === j).length === 0) {
+          divisors.push({ value: j, common: [] })
+        }
       }
     }
   }
 
-  allDivisors = allDivisors.sort((a, b) => { return a - b });
+  // Find greatest and common divisors
 
-  let greatestCommonDivisor = 1;
+  let greatestDivisor = 0
+  let areCommon = []
 
-  allDivisors.forEach((value) => {
-    let ids = nums.map((number) => number.value % value === 0 ? number.id : null);
-    let commonCount = 0;
+  for (let i = 0; i < divisors.length; i++) {
+    const divisor = divisors[i].value
+    const isCommon =
+      divisorsCounter.filter(c => c === divisor).length === numbers.length
 
-    ids.forEach((id) => {
-      if (id != null) commonCount++;
-    });
+    areCommon.push(isCommon)
 
-    let isCommon = commonCount === ids.length;
-
-    if (isCommon) {
-      greatestCommonDivisor = value;
+    if (isCommon && divisor > greatestDivisor) {
+      greatestDivisor = divisor
     }
+  }
 
-    numbers.push({
-      value,
-      ids,
-      common: isCommon
-    });
-  });
+  // Add to common array
 
-  return { greatest: greatestCommonDivisor, numbers };
+  for (let i = 0; i < divisors.length; i++) {
+    for (let j = 0; j < numbers.length; j++) {
+      if (numbers[j].value % divisors[i].value === 0) {
+        if (areCommon[i]) {
+          if (divisors[i].value === greatestDivisor) {
+            divisors[i].common.push({ id: numbers[j].id, type: 3 })
+          } else {
+            divisors[i].common.push({ id: numbers[j].id, type: 2 })
+          }
+        } else {
+          divisors[i].common.push({ id: numbers[j].id, type: 1 })
+        }
+      } else {
+        divisors[i].common.push({ id: numbers[j].id, type: 0 })
+      }
+    }
+  }
+
+  divisors = divisors.sort((a, b) => a.value - b.value)
+
+  return divisors
 }
 
-export default (state, action) => {
+export const AppReducer = (state, action) => {
   switch (action.type) {
     case 'UPDATE_DIVISORS':
       return {
         ...state,
-        divisors: getCommonDivisors(state.numbers)
+        divisors: [...getDivisors(state.numbers)],
       }
     case 'ADD_NUMBER':
       return {
         ...state,
-        numbers: [action.payload, ...state.numbers],
+        numbers: [{ id: uuid(), value: action.payload }, ...state.numbers],
       }
     case 'DELETE_NUMBER':
       return {
@@ -62,14 +84,14 @@ export default (state, action) => {
           if (number.id === action.payload.id) {
             return {
               ...number,
-              value: action.payload.number.value
+              value: action.payload.value,
             }
           }
 
-          return number;
+          return number
         }),
       }
     default:
-      return state;
+      return state
   }
-};
+}

@@ -1,0 +1,23 @@
+main {
+  flex-grow: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $gap;
+    padding: $gap;
+
+    @include sm {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include md {
+      grid-template-columns: none;
+      justify-content: center;
+      grid-auto-flow: column;
+      min-width: min-content;
+    }
+  }
+}

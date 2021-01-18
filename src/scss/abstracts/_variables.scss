@@ -1,0 +1,28 @@
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1200px;
+
+$font-stack: 'Poppins', sans-serif;
+$font-size: 12px;
+
+$gap: 10px;
+$border-radius: 12px;
+$divisor-radius: 6px;
+$btn-size: 30px;
+
+$glass-main: linear-gradient(to bottom right, #ffffff80, #ffffff33);
+$glass-big: linear-gradient(to top left, #ffffff99, #ffffff80);
+$glass-black: linear-gradient(to top left, #00000073, #00000066);
+
+$text-primary: #000000e6;
+$text-secondary: #ffffffe6;
+
+$positive: #00ff008c;
+$negative: #ff00008c;
+$btn: #0000004b;
+
+$divisor-type-0: #ff2600e6;
+$divisor-type-1: #ad1b01e6;
+$divisor-type-2: #6b1000e6;
+$divisor-type-3: #160300e6;

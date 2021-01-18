@@ -1,35 +1,19 @@
-import React, { useEffect } from 'react';
-import './scss/main.scss';
-import { GlobalProvider } from './context/GlobalState';
-import Header from './components/Header';
-import Container from './components/Container';
-import Footer from './components/Footer';
+import React from 'react'
+import { GlobalProvider } from './context/GlobalState'
+import Header from './components/Header'
+import Content from './components/Content'
+import Footer from './components/Footer'
 
-function App() {
-  let managePanel;
-
-  const onScroll = e => {    
-    managePanel.scrollLeft = e.target.scrollLeft;
-
-    let offset = e.target.offsetWidth - e.target.clientWidth;
-    managePanel.style.marginRight = `${offset}px`;   
-  };
-
-  useEffect(() =>{
-    // eslint-disable-next-line
-    managePanel = document.getElementById('manage-panel');
-
-    let displayPanel = document.getElementById('display-panel');   
-    displayPanel.onscroll = onScroll;
-  }, []);
-
+const App = () => {
   return (
-    <GlobalProvider>
-      <Header></Header>
-      <Container></Container>
-      <Footer></Footer>
-    </GlobalProvider>
-  );
+    <div className="app">
+      <GlobalProvider>
+        <Header />
+        <Content />
+        <Footer />
+      </GlobalProvider>
+    </div>
+  )
 }
 
-export default App;
+export default App

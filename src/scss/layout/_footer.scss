@@ -1,0 +1,22 @@
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 $gap $gap $gap;
+  padding: $gap;
+  background: $glass-main;
+  border-radius: $border-radius;
+  @include blur;
+  @include border;
+
+  .logo-author {
+    background: url(../../svg/logo-author.svg) center no-repeat;
+    width: $btn-size;
+    height: $btn-size;
+    margin-right: $gap;
+  }
+
+  .copyright {
+    font-size: 14px;
+  }
+}

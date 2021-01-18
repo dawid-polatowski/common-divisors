@@ -1,0 +1,59 @@
+header {
+  overflow: hidden;
+  margin: $gap $gap 0 $gap;
+  border-radius: $border-radius;
+  background: $glass-main;
+  @include blur;
+  @include border;
+}
+
+.menu {
+  border-radius: 0 0 $border-radius $border-radius;
+  background: $glass-main;
+
+  .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $gap;
+  }
+
+  .logo-app {
+    background: url(../../svg/logo-app.svg) center no-repeat;
+    width: $btn-size;
+    height: $btn-size;
+  }
+
+  .form-container {
+    width: 150px;
+    height: $btn-size;
+  }
+}
+
+.legend {
+  padding: $gap;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    li:not(:last-child) {
+      margin: 0 8px 0 0;
+
+      @include rwd-max(330) {
+        margin: 0 0 4px 0;
+      }
+    }
+
+    %divisor {
+      @include rwd-max(330) {
+        width: 100%;
+      }
+    }
+
+    @include rwd-max(330) {
+      flex-direction: column;
+    }
+  }
+}

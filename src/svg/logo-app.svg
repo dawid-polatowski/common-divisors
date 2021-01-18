@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-32,-32)">
+        <g id="logo-app">
+            <g id="right" transform="matrix(0.402615,0,0,0.402615,-52.8419,-48.4279)">
+                <path d="M340.342,199.764L340.344,199.764C348.127,199.764 355.59,202.855 361.093,208.358C366.596,213.861 369.688,221.324 369.688,229.107C369.688,255.136 369.688,293.29 369.688,321.468C369.688,331.349 365.762,340.825 358.775,347.812C351.788,354.799 342.312,358.724 332.431,358.724L273.288,358.724L340.342,199.764Z" style="fill:rgb(255,107,0);"/>
+            </g>
+            <g id="left" transform="matrix(0.402615,0,0,0.402615,-52.8419,-48.4279)">
+                <path d="M306.815,199.764L240.035,358.724L240.03,358.724C223.846,358.724 210.727,345.605 210.727,329.421C210.727,303.391 210.727,265.212 210.727,237.02C210.727,216.444 227.407,199.764 247.983,199.764L306.815,199.764Z" style="fill:rgb(206,49,0);"/>
+            </g>
+        </g>
+    </g>
+</svg>

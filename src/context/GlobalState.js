@@ -1,66 +1,72 @@
-import React, { createContext, useReducer } from 'react';
-import AppReducer from './AppReducer';
+import React, { createContext, useReducer } from 'react'
+import { AppReducer } from './AppReducer'
 
 // Initial state
+
 const initialState = {
-  divisors: {
-    greatest: 1,
-    divisors: []
-  },
-  numbers: []
+  numbers: [],
+  divisors: [],
 }
 
 // Create context
-export const GlobalContext = createContext(initialState);
+
+export const GlobalContext = createContext(initialState)
 
 // Provider component
+
 export const GlobalProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(AppReducer, initialState);
+  const [state, dispatch] = useReducer(AppReducer, initialState)
 
   // Actions
 
-  function updateDivisors() {
+  const updateDivisors = () => {
     dispatch({
       type: 'UPDATE_DIVISORS',
-      payload: {}
-    });
+      payload: {},
+    })
   }
 
-  function addNumber(number) {
+  const addNumber = value => {
     dispatch({
       type: 'ADD_NUMBER',
-      payload: number
-    });
+      payload: value,
+    })
 
-    updateDivisors();
+    updateDivisors()
   }
 
-  function deleteNumber(id) {
+  const deleteNumber = id => {
     dispatch({
       type: 'DELETE_NUMBER',
-      payload: id
-    });
+      payload: id,
+    })
 
-    updateDivisors();
+    updateDivisors()
   }
 
-  function updateNumber(id, number) {
+  const updateNumber = number => {
     dispatch({
       type: 'UPDATE_NUMBER',
       payload: {
-        id,
-        number
-      }
-    });
+        id: number.id,
+        value: number.value,
+      },
+    })
 
-    updateDivisors();
+    updateDivisors()
   }
 
-  return (<GlobalContext.Provider value={{
-    numbers: state.numbers,
-    divisors: state.divisors,
-    addNumber,
-    deleteNumber,
-    updateNumber
-  }}>{children}</GlobalContext.Provider>);
-};
+  return (
+    <GlobalContext.Provider
+      value={{
+        numbers: state.numbers,
+        divisors: state.divisors,
+        addNumber,
+        deleteNumber,
+        updateNumber,
+      }}
+    >
+      {children}
+    </GlobalContext.Provider>
+  )
+}

@@ -1,6 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import 'animate.css';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import 'animate.css'
+import './scss/main.scss'
+import App from './App'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'))

@@ -1,0 +1,49 @@
+@mixin blur {
+  backdrop-filter: blur(20px);
+}
+
+@mixin border {
+  border: 1px solid #ffffff4b;
+}
+
+@mixin border-hover {
+  border: 1px solid #0000004b;
+}
+
+// Breakpoints
+
+@mixin sm {
+  @media (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
+@mixin rwd-min($screen) {
+  @media (min-width: $screen + 'px') {
+    @content;
+  }
+}
+
+@mixin rwd-max($screen) {
+  @media (max-width: $screen + 'px') {
+    @content;
+  }
+}

@@ -1,0 +1,92 @@
+%divisor {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  font-size: $font-size;
+  border-radius: $divisor-radius;
+  @include border;
+  overflow: hidden;
+
+  .stars {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    min-width: 10px;
+    height: 100%;
+
+    .star {
+      width: 6px;
+      height: 6px;
+      background: url(../../svg/star.svg);
+
+      &:not(:last-child) {
+        margin-bottom: 2px;
+      }
+    }
+  }
+
+  .divisor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $text-secondary;
+    background: $glass-black;
+    width: 100%;
+    height: 100%;
+    padding: 4px;
+  }
+}
+
+.divisor-0 {
+  @extend %divisor;
+  display: none;
+
+  .stars {
+    background-color: $divisor-type-0;
+  }
+
+  .star:nth-child(1),
+  .star:nth-child(2),
+  .star:nth-child(3) {
+    display: none;
+  }
+
+  @include sm {
+    display: flex;
+  }
+}
+
+.divisor-1 {
+  @extend %divisor;
+
+  .stars {
+    background-color: $divisor-type-1;
+  }
+
+  .star:nth-child(1),
+  .star:nth-child(2) {
+    display: none;
+  }
+}
+
+.divisor-2 {
+  @extend %divisor;
+
+  .stars {
+    background-color: $divisor-type-2;
+  }
+
+  .star:nth-child(1) {
+    display: none;
+  }
+}
+
+.divisor-3 {
+  @extend %divisor;
+
+  .stars {
+    background-color: $divisor-type-3;
+  }
+}

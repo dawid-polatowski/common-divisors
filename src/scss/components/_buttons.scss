@@ -1,0 +1,60 @@
+%button {
+  cursor: pointer;
+  min-width: $btn-size;
+  min-height: $btn-size;
+  border: none;
+  background-color: $btn;
+  transition: background-color 0.2s ease-in;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    margin: auto;
+    width: 50%;
+    height: 50%;
+  }
+}
+
+.btn-add {
+  @extend %button;
+
+  &::after {
+    background: url(../../svg/add.svg);
+  }
+
+  &:hover {
+    background-color: $positive;
+  }
+}
+
+.btn-update {
+  @extend %button;
+
+  &::after {
+    background: url(../../svg/apply.svg);
+  }
+
+  &:disabled {
+    display: none;
+  }
+
+  &:hover {
+    background-color: $positive;
+  }
+}
+
+.btn-delete {
+  @extend %button;
+
+  &::after {
+    background: url(../../svg/delete.svg);
+  }
+
+  &:hover {
+    background-color: $negative;
+  }
+}
